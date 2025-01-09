@@ -32,6 +32,14 @@ args = "Run Import Custom Exercise"
 task = "workflow.run"
 args = "Run Module Variables Exercise"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Circular Import Demo"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Fixed Circular Import Demo"
+
 [[workflows.workflow]]
 name = "Run First Exercise"
 author = "agent"
@@ -115,6 +123,34 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python exercises/02.3-module-variables/app.py"
+
+[[workflows.workflow]]
+name = "Circular Import Demo"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python exercises/03.1-spot-the-circle/calculator.py"
+
+[[workflows.workflow]]
+name = "Fixed Circular Import Demo"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python exercises/03.2-fix-the-circle/calculator.py"
 
 [deployment]
 run = ["sh", "-c", "python exercises/01.1-your-first-import/app.py"]
