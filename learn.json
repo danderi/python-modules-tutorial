@@ -1,0 +1,13 @@
+{
+    "slug": "python-modules-tutorial",
+    "title": "Learn Python Modules",
+    "repository": "https://github.com/learnpack/python-modules",
+    "preview": "https://github.com/learnpack/python-modules/blob/master/preview.gif?raw=true",
+    "description": "Learn how to use and create Python modules, from basic imports to advanced concepts",
+    "language": "python3",
+    "difficulty": "beginner",
+    "duration": 6,
+    "videoSolutions": false,
+    "bugsLink": "https://github.com/learnpack/python-modules/issues/new",
+    "graded": true
+}

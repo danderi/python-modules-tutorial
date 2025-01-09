@@ -1,0 +1,5 @@
+import random
+
+# Generate a random number between 1 and 10 and print it
+random_number = random.randint(1, 10)
+print(random_number)
