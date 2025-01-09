@@ -1,5 +1,5 @@
-# Course-related operations
-from .models import Course
+from typing import List
+from .models import Course, Student
 from .utils import validate_course_code
 
 def create_course(code: str, name: str) -> Course:
@@ -8,11 +8,10 @@ def create_course(code: str, name: str) -> Course:
         return Course(code=code, name=name, students=[])
     raise ValueError("Invalid course code")
 
-def get_course_students(course: Course) -> list:
-    """Get list of student IDs enrolled in a course"""
+def get_course_students(course: Course) -> List[int]:
+    """Get list of students enrolled in a course"""
     return course.students.copy()
 
-# Test the functionality
-if __name__ == "__main__":
-    course = create_course("PY101", "Python 101")
-    print(f"Created course: {course.name} ({course.code})")
+def has_student(course: Course, student_id: int) -> bool:
+    """Check if a student is enrolled in this course"""
+    return student_id in course.students

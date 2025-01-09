@@ -1,6 +1,6 @@
 # 🔄 Using Your Custom Module
 
-Now that we've created our greetings module, let's use it in another file!
+Now that we've created our greetings module, let's use it in our app.py!
 
 ## 📝 Instructions
 
@@ -12,3 +12,5 @@ Now that we've created our greetings module, let's use it in another file!
 ## 💡 Hint
 
 To import from your own module:
+```python
+from greetings import say_hello, say_goodbye

@@ -1,4 +1,4 @@
-from typing import Optional
+# Student-related operations
 from .models import Student, Course
 from .utils import validate_student_id, format_enrollment
 
@@ -13,9 +13,13 @@ def enroll_student(student: Student, course: Course) -> str:
     if course.code not in student.courses:
         student.courses.append(course.code)
         course.students.append(student.id)
-        return format_enrollment(student.name, student.id, course.name, course.code)
+        return format_enrollment(student, course)
     return "Student already enrolled"
 
-def get_student_courses(student: Student) -> list:
-    """Get list of courses a student is enrolled in"""
-    return student.courses.copy()
+# Test the functionality
+if __name__ == "__main__":
+    from .courses import create_course
+
+    student = create_student(1, "Alice")
+    course = create_course("PY101", "Python 101")
+    print(enroll_student(student, course))
