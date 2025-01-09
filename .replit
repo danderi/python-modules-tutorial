@@ -16,6 +16,10 @@ args = "Run First Exercise"
 task = "workflow.run"
 args = "Run Math Module Exercise"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run Specific Import Exercise"
+
 [[workflows.workflow]]
 name = "Run First Exercise"
 author = "agent"
@@ -43,6 +47,20 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python exercises/01.2-math-module/app.py"
+
+[[workflows.workflow]]
+name = "Run Specific Import Exercise"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python exercises/01.3-import-specific/app.py"
 
 [deployment]
 run = ["sh", "-c", "python exercises/01.1-your-first-import/app.py"]
