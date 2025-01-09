@@ -1,5 +1,5 @@
 # This is our validator module
-from app import multiply_numbers  # Updated import to use app.py
+from app import multiply_numbers  # This import creates a circle!
 
 def validate_numbers(a, b):
     """Check if inputs are valid numbers"""

@@ -1,4 +1,4 @@
-# This is our calculator module
+# This is our calculator module - renamed to app.py
 from utils import validate_numbers
 
 def add_numbers(a, b):

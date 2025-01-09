@@ -44,6 +44,10 @@ args = "Fixed Circular Import Demo"
 task = "workflow.run"
 args = "Run Best Practices Example"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run Entry Point Example"
+
 [[workflows.workflow]]
 name = "Run First Exercise"
 author = "agent"
@@ -154,7 +158,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python exercises/03.2-fix-the-circle/calculator.py"
+args = "python exercises/03.2-fix-the-circle/app.py"
 
 [[workflows.workflow]]
 name = "Run Best Practices Example"
@@ -169,6 +173,20 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python exercises/03.3-best-practices/app.py"
+
+[[workflows.workflow]]
+name = "Run Entry Point Example"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python exercises/01.0-entry-point/app.py"
 
 [deployment]
 run = ["sh", "-c", "python exercises/01.1-your-first-import/app.py"]
