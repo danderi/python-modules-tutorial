@@ -24,7 +24,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
+```python
 # helper.py (Another module)
 def greet(name):
     print(f"Hello, {name}!")
