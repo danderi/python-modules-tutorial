@@ -34,8 +34,12 @@ def greet(name):
 
 ## 🌟 Why This Matters
 
+
+
 - 🎯 Keeps your code organized
+
 - 🔄 Makes it clear where your program starts
+
 - 📦 Helps avoid circular imports (we'll learn about these later!)
 
 In the next exercises, we'll practice importing and using modules, always starting from our entry point `app.py`! 🚀

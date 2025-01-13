@@ -11,3 +11,7 @@ Sometimes you don't need everything from a module - you just want one or two thi
 ## 💡 Hint
 
 To import just one thing from a module, use:
+
+```python
+  from random import choice 
+```
