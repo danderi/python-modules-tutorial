@@ -1,6 +1,6 @@
 # 🏗️ Creating Your Own Modules
 
-Hey there! 👋 Now that you know how to use existing modules, let's learn how to create our own!
+Now that you know how to use existing modules, let's learn how to create our own!
 
 ## 🤔 Why Create Custom Modules?
 

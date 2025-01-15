@@ -3,7 +3,7 @@
 
 def greet(name):
     """A simple function to greet someone"""
-    print(f"Hello, {name}! 👋")
+    print(f"Hello, {name}!")
 
 # We don't need a main block here because this is a helper module
 # It's meant to be imported, not run directly

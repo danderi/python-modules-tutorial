@@ -1,6 +1,16 @@
 # 📦 Introduction to Python Modules
 
-Hey there! 👋 Let's talk about Python modules - they're super cool and helpful!
+## 📝 Instructions
+
+This is a reading with some interactive practices.
+
+1. Follow the provided instructions and examples.
+2. Perform the interactive practices in your development environment.
+3. Use Rigobot AI to validate your work and resolve any doubts you may have.
+4. Observe the console output to ensure your code works correctly.
+
+# Let's talk about Python modules: they are super cool and useful!
+
 
 ## 🎯 Main Concepts
 

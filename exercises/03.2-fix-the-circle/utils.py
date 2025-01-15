@@ -2,8 +2,10 @@
 
 def is_valid_number(value):
     """Check if a value is a valid number"""
-    return isinstance(value, (int, float))
+    pass
 
 def validate_numbers(a, b):
     """Check if both inputs are valid numbers"""
-    return is_valid_number(a) and is_valid_number(b)
+    pass
+
+

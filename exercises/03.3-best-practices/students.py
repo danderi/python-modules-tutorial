@@ -10,11 +10,8 @@ def create_student(student_id: int, name: str) -> Student:
 
 def enroll_student(student: Student, course: Course) -> str:
     """Enroll a student in a course"""
-    if course.code not in student.courses:
-        student.courses.append(course.code)
-        course.students.append(student.id)
-        return format_enrollment(student, course)
-    return "Student already enrolled"
+    #TODO: Implement the functionality
+    pass
 
 # Test the functionality
 if __name__ == "__main__":

@@ -10,8 +10,8 @@ def create_course(code: str, name: str) -> Course:
 
 def get_course_students(course: Course) -> list:
     """Get list of student IDs enrolled in a course"""
-    return course.students.copy()
-
+    #TODO: Implement the functionality
+    pass
 # Test the functionality
 if __name__ == "__main__":
     course = create_course("PY101", "Python 101")

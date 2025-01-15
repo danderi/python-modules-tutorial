@@ -4,7 +4,7 @@ Now that we've seen the circular import error, let's fix it! We'll learn how to 
 
 ## 📝 Instructions
 
-1. Create a new file called `utils.py` for shared code
+1. Check the file called `utils.py` we will use for the shared code
 2. Move the validation logic to `utils.py`
 3. Update `app.py` and `validator.py` to use the shared code
 4. Test that everything works now!
