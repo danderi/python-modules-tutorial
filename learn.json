@@ -1,13 +1,30 @@
 {
     "slug": "python-modules-tutorial",
-    "title": "Learn Python Modules",
+    "title": {
+        "en": "Learn Python Modules",
+        "es": "Aprender Módulos de Python"
+    },
     "repository": "https://github.com/learnpack/python-modules",
     "preview": "https://github.com/learnpack/python-modules/blob/master/preview.gif?raw=true",
-    "description": "Learn how to use and create Python modules, from basic imports to advanced concepts",
+    "description": {
+        "en": "Learn how to use and create Python modules, from basic imports to advanced concepts",
+        "es": "Aprende a usar y crear módulos de Python, desde importaciones básicas hasta conceptos avanzados"
+    },
     "language": "python3",
     "difficulty": "beginner",
     "duration": 6,
     "videoSolutions": false,
+    "projectType": "tutorial",
     "bugsLink": "https://github.com/learnpack/python-modules/issues/new",
-    "graded": true
+    "graded": true,
+    "technologies": ["python", "modules"],
+    "telemetry": {
+        "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry"
+    },
+    "video": {
+        "intro": {
+            "es": "https://www.youtube.com/watch?v=IXNSwnN-YqM",
+            "en": "https://www.youtube.com/watch?v=amyDNhZwGJQ"
+        }
+    }
 }
