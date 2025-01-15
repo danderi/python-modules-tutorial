@@ -9,23 +9,14 @@
 3. Calcula pi veces 2 usando `math.pi`
 4. Imprime ambos resultados
 
-## 💡 Pista
-
-Así es como se usa la función de raíz cuadrada:
-  ```python
-import math
-
-# Para encontrar la raíz cuadrada:
-result = math.sqrt(16)  # Dará 4.0
-
-# Para usar pi:
-pi_value = math.pi  # Da el valor de pi
-```
-
 ## ✅ Salida esperada
 
 Tu programa debería imprimir algo como:
 ```python
-La raíz cuadrada de 16 es: 4.0
-Dos veces pi es: 6.283185307179586
+The square root of 16 is: 4.0
+Two times pi is: 6.6.283185307179586
 ```
+
+## 💡 Pista
+
+Puedes mirar en este link como se utiliza el modulo math con sus distintos métodos: [Modulo math](https://www.w3schools.com/python/python_math.asp)

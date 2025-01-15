@@ -1,6 +1,6 @@
 # 🏗️ Creando tus propios módulos
 
-¡Hola! 👋 Ahora que sabes cómo usar módulos existentes, ¡aprendamos a crear los nuestros!
+Ahora que sabes cómo usar módulos existentes, ¡aprendamos a crear los nuestros!
 
 ## 🤔 ¿Por qué crear módulos personalizados?
 

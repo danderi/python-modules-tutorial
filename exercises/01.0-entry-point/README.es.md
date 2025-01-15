@@ -26,16 +26,42 @@ if __name__ == "__main__":
     main()
 ```
 
+helper.py (Otro modulo)
+
 ```python
-# helper.py (Another module)
 def greet(name):
     print(f"Hello, {name}!")
 ```
 
-## 🌟 Por qué esto importa
+## Instrucciones
+
+En este ejercicio vamos a trabajar con dos archivos ya creados. ¡Empecemos! 🚀
+
+1. Fijate en el archivo llamado `helper.py` el cual contiene una función auxiliar llamada greet(name) que simplemente se encarga de saludar al usuario. Es una "herramienta" que utilizaremos en el programa principal.
+
+2. Fijate en el archivo llamado **app.py:** que será el archivo principal que sirve como punto de entrada al programa e importa la función `greet` de helper.py y organiza la lógica principal en la función `main()`.
+
+**Nota:** El bloque if __name__ == "__main__" asegura que el programa comience desde aquí.
+
+3. En el archivo principal **app.py** completa la función main() en app.py para que pida el nombre del usuario y guardalo en una variable `name`. 
+
+4. Llama a la función `greet(name)` para saludar al usuario.
+
+5. Comprueba en la función `main()` lo siguiente:
+
+- Si el nombre es "Teacher", mostrar un mensaje especial. Ejemplo: `Welcome, teacher ready to guide your students?`
+
+- Si el nombre tiene menos de 3 caracteres, dar una advertencia. Ejemplo: `Your name is quite short! Are you sure that's correct?`
+
+- Si es distinto a "Teacher" y tiene más de 3 caracteres darle la Bienvenidad. Ejemplo: `Nice to meet you! Let's start learning Python! `
+
+6. Una vez que hayas completado la lógica en `main()`, ejecuta el programa.
+
+Finalmente, ¿por qué ha sido importante la organización que hemos elegido para nuestro código?
 
 
-- 🎯 Mantiene su código organizado
+- 🎯 Porque mantiene el código organizado
 - 🔄 Deja claro dónde comienza su programa
 - 📦 Ayuda a evitar importaciones circulares (¡las aprenderemos más adelante!)
-En los próximos ejercicios, practicaremos la importación y el uso de módulos, ¡siempre comenzando desde nuestro punto de entrada app.py! 🚀
+
+En los próximos ejercicios, practicaremos la importación y el uso de módulos, ¡siempre comenzando desde nuestro punto de entrada app.py! 

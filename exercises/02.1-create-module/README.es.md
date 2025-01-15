@@ -5,14 +5,34 @@
 ## 📝 Instrucciones
 
 1. Crea un archivo llamado `greetings.py`
-2. En `app.py`, importa tus funciones de saludo
-3. Escribe una función llamada `saludar(nombre)` que devuelva "¡Hola, [nombre]!"
-4. Escribe otra función llamada `despedirse(nombre)` que devuelva "¡Adiós, [nombre]!"
-5. Importa y usa estas funciones en tu `app.py`
+
+2. En el archivo llamado `greetings.py` escribe una función llamada `say_hello(name)` que devuelva:
+
+```python
+"Hello, [name]!"
+```
+3. En el mismo archivo `greetings.py` define otra función llamada `say_goodbye(name)` que devuelva: 
+
+```python
+"Goodbye, [name]!"
+```
+4. Importa y usa estas funciones en el archivo `app.py`,  haciendo un print() de lo que retorna cada una.
+
+
+## ✅ Salida esperada
+
+Tu programa debería imprimir algo como:
+```python
+Hello, Alice!
+Goodbye, Alice!
+```
 
 ## 💡 Pista
 
-Tu archivo de módulo debería verse así:
+La importación en tu archivo `app.py` debería verse algo así:
+
 ```python
-def saludar(nombre):
-  return f"Hola, {nombre}!"
+# app.py
+
+from greetings import say_hello 
+```

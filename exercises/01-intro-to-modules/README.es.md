@@ -1,6 +1,17 @@
 # 📦 Introducción a los módulos de Python
+   
+## 📝 Instrucciones
 
-¡Hola! 👋 Hablemos de los módulos de Python: ¡son súper geniales y útiles!
+Esto es una lectura con algunas prácticas interactivas. 
+
+1. Sigue las instrucciones y ejemplos proporcionados.
+2. Realiza las prácticas interactivas en tu entorno de desarrollo.
+3. Usa Rigobot AI para validar tu trabajo y resolver cualquier duda que tengas.
+4. Observa la salida en la consola para asegurarte de que tu código funciona correctamente.
+
+
+
+# Hablemos de los módulos de Python: ¡son súper geniales y útiles!
 
 ## 🎯 Conceptos principales
 

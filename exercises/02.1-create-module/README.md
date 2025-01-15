@@ -4,15 +4,35 @@ Let's create a simple greeting module! We'll make a module that has functions to
 
 ## 📝 Instructions
 
-1. Create a file called `greetings.py`
-2. In `app.py`, import your greeting functions
-3. Write a function called `say_hello(name)` that returns "Hello, [name]!"
-4. Write another function called `say_goodbye(name)` that returns "Goodbye, [name]!"
-5. Import and use these functions in your app.py
+1. Create a file named `greetings.py`
+
+2. In the file named `greetings.py`, write a function called `say_hello(name)` that returns:
+
+```python
+"Hello, [name]!"
+```
+3. In the same file `greetings.py`, define another function called `say_goodbye(name)` that returns:
+
+```python
+"Goodbye, [name]!"
+```
+4. Import and use these functions in the file `app.py`, printing what each one returns.
+
+## ✅ Expected Output
+
+Your program should print something like:
+
+```python
+Hello, Alice!
+Goodbye, Alice!
+```
 
 ## 💡 Hint
 
-Your module file should look something like this:
+The import in your `app.py` file should look something like this:
+
 ```python
-def say_hello(name):
-    return f"Hello, {name}!"
+# app.py
+
+from greetings import say_hello 
+```

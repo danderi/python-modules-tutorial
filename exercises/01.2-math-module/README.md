@@ -1,6 +1,6 @@
 # 🧮 Using the Math Module
 
-Time to do some math! Python's `math` module has lots of useful mathematical functions.
+Time to do some math! Python's `math` module has many useful mathematical functions.
 
 ## 📝 Instructions
 
@@ -9,22 +9,14 @@ Time to do some math! Python's `math` module has lots of useful mathematical fun
 3. Calculate pi times 2 using `math.pi`
 4. Print both results
 
-## 💡 Hint
-
-Here's how to use the square root function:
-```python
-import math
-
-# To find square root:
-result = math.sqrt(16)  # Will give you 4.0
-
-# To use pi:
-pi_value = math.pi  # Gives you the value of pi
-```
-
-## ✅ Expected output
+## ✅ Expected Output
 
 Your program should print something like:
 ```python
 The square root of 16 is: 4.0
 Two times pi is: 6.283185307179586
+```
+
+## 💡 Hint
+
+You can check out this link to see how to use the math module with its various methods: [Math module](https://www.w3schools.com/python/python_math.asp)
