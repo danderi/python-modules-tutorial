@@ -1,6 +1,6 @@
 # 🔄 Entendiendo las importaciones circulares
 
-¡Hola! 👋 Hablemos de algo complicado que puede suceder cuando se trabaja con módulos de Python: ¡las importaciones circulares!
+Hablemos de algo complicado que puede suceder cuando se trabaja con módulos de Python: ¡las importaciones circulares!
 
 ## 🤔 ¿Qué es una importación circular?
 

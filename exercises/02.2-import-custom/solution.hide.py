@@ -7,4 +7,3 @@ names = ["Alice", "Bob", "Charlie"]
 for name in names:
     print(say_hello(name))
     print(say_goodbye(name))
-    print("-" * 20)  # Separator line
