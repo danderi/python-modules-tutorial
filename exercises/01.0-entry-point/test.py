@@ -1,41 +1,45 @@
-import unittest
+import pytest
 from unittest.mock import patch
 from io import StringIO
-from app import main
+import app  # Importa el archivo que contiene tu código principal
 
-class TestApp(unittest.TestCase):
-    @patch('builtins.input', return_value="Teacher")
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_teacher_name(self, mock_stdout, mock_input):
-        # Simula la entrada del nombre "Teacher"
-        main()
-        output = mock_stdout.getvalue()
-        self.assertIn("Welcome, teacher ready to guide your students?", output)
+@pytest.mark.it("Should warn about a very short name")
+def test_short_name():
+    with patch("builtins.input", return_value="Ed"):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            app.main()
+            output = stdout.getvalue().strip()
+    assert "Your name is quite short!" in output, "The program did not warn about short names correctly."
 
-    @patch('builtins.input', return_value="Jo")
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_short_name(self, mock_stdout, mock_input):
-        # Simula la entrada de un nombre corto
-        main()
-        output = mock_stdout.getvalue()
-        self.assertIn("Your name is quite short! Are you sure that's correct?", output)
+@pytest.mark.it("Should respond positively to a regular name")
+def test_regular_name():
+    with patch("builtins.input", return_value="Alice"):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            app.main()
+            output = stdout.getvalue().strip()
+    assert "Nice to meet you!" in output, "The program did not respond positively to a regular name."
 
-    @patch('builtins.input', return_value="Alex")
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_regular_name(self, mock_stdout, mock_input):
-        # Simula la entrada de un nombre regular
-        main()
-        output = mock_stdout.getvalue()
-        self.assertIn("Nice to meet you! Let's start learning Python!", output)
+@pytest.mark.it("Should handle empty input gracefully")
+def test_empty_name():
+    with patch("builtins.input", return_value=""):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            app.main()
+            output = stdout.getvalue().strip()
+    assert "Your name is quite short!" in output, "The program did not handle empty input correctly."
 
-    @patch('builtins.input', return_value="")
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_empty_name(self, mock_stdout, mock_input):
-        # Simula la entrada vacía
-        main()
-        output = mock_stdout.getvalue()
-        self.assertIn("Hello, !", output)  # Saludo para nombre vacío
-        self.assertIn("Your name is quite short! Are you sure that's correct?", output)
+@pytest.mark.it("Should handle name input with extra spaces correctly")
+def test_name_with_spaces():
+    with patch("builtins.input", return_value="   John   "):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            app.main()
+            output = stdout.getvalue().strip()
+    assert "Nice to meet you!" in output, "The program did not handle names with extra spaces correctly."
 
-if __name__ == "__main__":
-    unittest.main()
+@pytest.mark.it("Should greet the teacher with a specific message")
+def test_teacher_name():
+    with patch("builtins.input", return_value="Teacher"):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            app.main()
+            output = stdout.getvalue().strip()
+    assert "Welcome Teacher, are you ready to guide your students?" in output, "The program did not greet the teacher correctly."
+
