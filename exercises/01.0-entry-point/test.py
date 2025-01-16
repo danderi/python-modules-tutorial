@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch
 from io import StringIO
-import app  # Importa el archivo que contiene tu código principal
+import app  # Import the file that contains your main code
 
 @pytest.mark.it("Should warn about a very short name")
 def test_short_name():
@@ -42,4 +42,3 @@ def test_teacher_name():
             app.main()
             output = stdout.getvalue().strip()
     assert "Welcome Teacher, are you ready to guide your students?" in output, "The program did not greet the teacher correctly."
-

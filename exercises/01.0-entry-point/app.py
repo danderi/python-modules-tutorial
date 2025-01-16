@@ -1,5 +1,4 @@
 # This is our entry point file! This file is where our program starts running
-
 from helper import greet # First, we import what we need from our helper module
 
 
