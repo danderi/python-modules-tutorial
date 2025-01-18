@@ -1,11 +1,10 @@
 def execute_app():
-    # import greetings module and use its functions
     from greetings import say_hello, say_goodbye
 
-    #print the result of the functions
-    # print(say_hello("Alice"))
-    # print(say_goodbye("Alice"))
+    # Create a list of names
+    names = ["Alice", "Bob", "Charlie"]
 
-
-
-
+    # Loop through the names and greet each person
+    for name in names:
+        print(say_hello(name))
+        print(say_goodbye(name))

@@ -5,13 +5,13 @@
         "editor": {
             "mode": "extension",
             "agent": "vscode",
-            "version": "5.0.71"
+            "version": "5.0.73"
         },
         "dirPath": "./.learn",
         "configPath": "learn.json",
         "outputPath": ".learn/dist",
         "publicPath": "/preview",
-        "publicUrl": "https://zany-space-fishstick-g74px9ppvq52vv9j-3000.app.github.dev",
+        "publicUrl": "https://ominous-enigma-649pv6ppqgg246qw-3000.app.github.dev",
         "contact": "https://github.com/learnpack/learnpack/issues/new",
         "language": "python3",
         "autoPlay": true,
@@ -67,8 +67,8 @@
         },
         "translations": []
     },
-    "address": "https://zany-space-fishstick-g74px9ppvq52vv9j.github.dev",
-    "currentExercise": "02.1-create-module",
+    "address": "https://ominous-enigma-649pv6ppqgg246qw.github.dev",
+    "currentExercise": "02.2-import-custom",
     "exercises": [
         {
             "position": 0,
@@ -105,7 +105,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.0-entry-point/app.py",
             "title": "01.0-entry-point",
             "graded": true,
             "files": [
@@ -117,11 +117,6 @@
                 {
                     "path": "exercises/01.0-entry-point/README.md",
                     "name": "README.md",
-                    "hidden": true
-                },
-                {
-                    "path": "exercises/01.0-entry-point/__pycache__",
-                    "name": "__pycache__",
                     "hidden": true
                 },
                 {
@@ -156,7 +151,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.1-your-first-import/app.py",
             "title": "01.1-your-first-import",
             "graded": true,
             "files": [
@@ -168,6 +163,11 @@
                 {
                     "path": "exercises/01.1-your-first-import/README.md",
                     "name": "README.md",
+                    "hidden": true
+                },
+                {
+                    "path": "exercises/01.1-your-first-import/__pycache__",
+                    "name": "__pycache__",
                     "hidden": true
                 },
                 {
@@ -197,7 +197,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.2-math-module/app.py",
             "title": "01.2-math-module",
             "graded": true,
             "files": [
@@ -243,7 +243,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.3-import-specific/app.py",
             "title": "01.3-import-specific",
             "graded": true,
             "files": [
@@ -255,6 +255,11 @@
                 {
                     "path": "exercises/01.3-import-specific/README.md",
                     "name": "README.md",
+                    "hidden": true
+                },
+                {
+                    "path": "exercises/01.3-import-specific/__pycache__",
+                    "name": "__pycache__",
                     "hidden": true
                 },
                 {
@@ -310,7 +315,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/02.1-create-module/app.py",
             "title": "02.1-create-module",
             "graded": true,
             "files": [
@@ -345,7 +350,7 @@
                     "hidden": true
                 }
             ],
-            "done": true
+            "done": false
         },
         {
             "position": 7,
@@ -371,6 +376,11 @@
                     "hidden": true
                 },
                 {
+                    "path": "exercises/02.2-import-custom/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
+                {
                     "path": "exercises/02.2-import-custom/app.py",
                     "name": "app.py",
                     "hidden": false
@@ -391,7 +401,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 8,
@@ -632,5 +642,5 @@
     "bugsLink": null,
     "videoSolutions": false,
     "localhostOnly": false,
-    "session": 5007630075203124000
+    "session": 8244224669192311000
 }
