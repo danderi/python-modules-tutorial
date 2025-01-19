@@ -1,5 +1,4 @@
 from io import StringIO
-import sys
 from unittest.mock import patch
 import pytest
 import importlib
@@ -9,7 +8,7 @@ import importlib
 def test_import_constants():
     from app import PI, GRAVITY, AUTHOR
         
-    # Verificar que las constantes estén definidas
+    # Verify that the constants are defined
     assert isinstance(PI, (int, float)), "PI is not a valid number"
     assert isinstance(GRAVITY, (int, float)), "GRAVITY is not a valid number"
     assert isinstance(AUTHOR, str), "AUTHOR is not a valid string"
@@ -19,7 +18,7 @@ def test_import_constants():
 def test_functions_declared():
     from app import calculate_circle_area, calculate_fall_time
         
-    # Verificar que ambas funciones sean callables (es decir, que estén definidas como funciones)
+    # Verify that both functions are callable (i.e., they are defined as functions)
     assert callable(calculate_circle_area), "The function calculate_circle_area is not declared in app.py"
     assert callable(calculate_fall_time), "The function calculate_fall_time is not declared in app.py"
    
@@ -28,27 +27,19 @@ def test_functions_declared():
 @pytest.mark.it("Should use calculate_circle_area and calculate_fall_time in app.py")
 def test_app_uses_functions():
     with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
-        # Importar el módulo app
+        # Import the app module
         import app
 
-        # Llamar manualmente las funciones para asegurarse de que se usen
+        # Manually call the functions to ensure they are used
         app.calculate_circle_area(5)
         app.calculate_fall_time(100)
 
-        # Recargar el módulo para ejecutar el código en el bloque principal
-        importlib.reload(app)  # Esto hace que se ejecute el código principal nuevamente
+        # Reload the module to execute the code in the main block
+        importlib.reload(app)  # This makes the main code execute again
 
-        # Capturar la salida de la consola
+        # Capture the console output
         output = mock_stdout.getvalue()
 
-        # Verificar que las funciones hayan sido utilizadas
+        # Verify that the functions have been used
         assert "Area of a circle with radius 5:" in output, "The function calculate_circle_area was not used in app.py"
         assert "Time to fall from 100 meters:" in output, "The function calculate_fall_time was not used in app.py"
-    #     # Importar y recargar el módulo app
-    #     import app
-    #     import app
-    #     app.calculate_circle_area(5)
-    #     app.calculate_fall_time(100)
-    #     importlib.reload(app)  # Asegura que el bloque principal del código se ejecute
-
-       
