@@ -1,16 +1,12 @@
 # This is our validator module
-from utils import validate_numbers
+from app import multiply_numbers  # This import creates a circle!
 
-def validate_calculation(func, a, b):
-    """Validate a calculation function with given inputs"""
-    if validate_numbers(a, b):
-        result = func(a, b)
-        return isinstance(result, (int, float))
-    return False
+def validate_numbers(a, b):
+    """Check if inputs are valid numbers"""
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        return False
 
-# Test the validator
-if __name__ == "__main__":
-    from calculator import add_numbers, multiply_numbers
-    
-    print(validate_calculation(add_numbers, 5, 3))  # Should print: True
-    print(validate_calculation(multiply_numbers, "not a number", 3))  # Should print: False
+    # Use multiply_numbers as part of validation (this creates the circular import!)
+    result = multiply_numbers(a, 1)
+    return result != "Invalid input"
+

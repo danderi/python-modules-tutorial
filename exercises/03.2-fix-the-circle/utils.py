@@ -1,11 +1,11 @@
 # This is our shared utilities module
 
-def is_valid_number(value):
-    """Check if a value is a valid number"""
+def add_numbers(a, b):
+    """Add two numbers if they are valid"""
     pass
 
-def validate_numbers(a, b):
-    """Check if both inputs are valid numbers"""
+def multiply_numbers(a, b):
+    """Multiply two numbers if they are valid"""
     pass
 
 
