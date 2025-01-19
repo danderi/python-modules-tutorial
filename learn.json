@@ -21,6 +21,9 @@
     "telemetry": {
         "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry"
     },
+    "editor": {
+        "version": "5.0"
+    },
     "video": {
         "intro": {
             "es": "https://www.youtube.com/watch?v=IXNSwnN-YqM",
