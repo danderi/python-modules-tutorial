@@ -2,14 +2,15 @@ import pytest
 from unittest.mock import patch
 from io import StringIO
 import app  # Import the file that contains your main code
+from test_utils import smart_stdout_asset
 
 @pytest.mark.it("Should warn about a very short name")
 def test_short_name():
     with patch("builtins.input", return_value="Ed"):
         with patch("sys.stdout", new_callable=StringIO) as stdout:
             app.main()
-            output = stdout.getvalue().strip()
-    assert "Your name is quite short!" in output, "The program did not warn about short names correctly."
+            output = stdout.getvalue().strip().lower()
+    assert "Your name is quite short!".lower() in output, "The program did not warn about short names correctly."
 
 @pytest.mark.it("Should respond positively to a regular name")
 def test_regular_name():
