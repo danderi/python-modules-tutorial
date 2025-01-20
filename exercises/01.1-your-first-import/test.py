@@ -1,49 +1,21 @@
-import unittest
+import pytest
 from unittest.mock import patch
 from io import StringIO
-import sys
-import app
-import random
 
-class TestApp(unittest.TestCase):
-    @patch('random.randint', return_value=5)
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_random_number(self, mock_stdout, mock_randint):
-        # Capture the output
-        captured_output = mock_stdout
-        
-        # Call the function
-        app.random_number = random.randint(1, 10)
-        print(app.random_number)
-        
-        # Check the output
-        self.assertEqual(captured_output.getvalue().strip(), '5')
+@pytest.mark.it("Should import the random module")
+def test_random_module_import():
+    try:
+        import app  # Import the file that contains your main code
+        assert "random" in dir(app), "The random module is not imported"
+    except ImportError:
+        pytest.fail("The random module is not imported in app.py")
 
-    @patch('random.randint', return_value=7)
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_random_number_seven(self, mock_stdout, mock_randint):
-        # Capture the output
-        captured_output = mock_stdout
-        
-        # Call the function
-        app.random_number = random.randint(1, 10)
-        print(app.random_number)
-        
-        # Check the output
-        self.assertEqual(captured_output.getvalue().strip(), '7')
-
-    @patch('random.randint', return_value=10)
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_random_number_ten(self, mock_stdout, mock_randint):
-        # Capture the output
-        captured_output = mock_stdout
-        
-        # Call the function
-        app.random_number = random.randint(1, 10)
-        print(app.random_number)
-        
-        # Check the output
-        self.assertEqual(captured_output.getvalue().strip(), '10')
-
-if __name__ == "__main__":
-    unittest.main()
+@pytest.mark.it("Should generate a random number between 1 and 10 and print it")
+def test_random_number_generation():
+    with patch("random.randint", return_value=5):
+        with patch("sys.stdout", new_callable=StringIO) as stdout:
+            import importlib
+            import app  # Import the file that contains your main code
+            importlib.reload(app)  # Reimport the module to ensure the code runs
+            output = stdout.getvalue().strip()
+    assert output == "5", "The output is not the expected number"

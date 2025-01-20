@@ -1,32 +1,48 @@
-import unittest
 from io import StringIO
-import sys
-from greetings import say_hello, say_goodbye
+import pytest
+from unittest.mock import patch
 
-class TestGreetingsLoop(unittest.TestCase):
-    def test_greetings_loop(self):
-        # Capture the output
-        captured_output = StringIO()
-        sys.stdout = captured_output
-        
-        # Create a list of names
-        names = ["Alice", "Bob", "Charlie"]
-        
-        # Loop through the names and greet each person
-        for name in names:
-            print(say_hello(name))
-            print(say_goodbye(name))
-        
-        # Reset redirect.
-        sys.stdout = sys.__stdout__
-        
-        # Check the output
-        expected_output = (
-            "Hello, Alice!\nGoodbye, Alice!\n"
-            "Hello, Bob!\nGoodbye, Bob!\n"
-            "Hello, Charlie!\nGoodbye, Charlie!\n"
-        )
-        self.assertEqual(captured_output.getvalue(), expected_output)
+@pytest.mark.it("Should check that 'say_hello' and 'say_goodbye' functions are imported in app")
+def test_functions_import():
+    import app  # Import the app module
+    # Check that 'say_hello' and 'say_goodbye' functions are imported in 'app'
+    assert hasattr(app, 'say_hello'), "say_hello is not imported in app"
+    assert hasattr(app, 'say_goodbye'), "say_goodbye is not imported in app"
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.it("Should declare the 'names' array in app.py")
+def test_names_array_declaration():
+    import app  # Import the app module
+    import importlib
+    importlib.reload(app)  # Reload the module to ensure it reflects recent changes
+    
+    assert hasattr(app, 'names'), "'names' array is not declared in app.py"
+    
+    # Check that 'names' is a list
+    assert isinstance(app.names, list), "'names' is not a list"
+    
+    # Check that the 'names' array contains the expected elements
+    expected_names = ["Alice", "Bob", "Charlie"]
+    assert app.names == expected_names, f"'names' array does not match the expected: {expected_names}. Actual: {app.names}"
+
+@pytest.mark.it("Should print the results of say_hello and say_goodbye in app.py") 
+def test_app_prints_greetings():
+    with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+        import app
+        import importlib
+        importlib.reload(app)  # Reimport the module to ensure the code runs
+        
+        # Capture what was printed
+        output = mock_stdout.getvalue().strip().split("\n")  # Capture each line of the standard output
+
+    # Define the expected values in the correct order
+    expected = [
+        "Hello, Alice!",
+        "Goodbye, Alice!",
+        "Hello, Bob!",
+        "Goodbye, Bob!",
+        "Hello, Charlie!",
+        "Goodbye, Charlie!"
+    ]
+
+    # Verify that the output is as expected
+    assert output == expected, f"Expected output to be '{expected}', but got '{output}'"

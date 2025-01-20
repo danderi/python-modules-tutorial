@@ -1,38 +1,31 @@
-import unittest
-from utils import is_valid_number, validate_numbers
-from calculator import add_numbers, multiply_numbers
-from validator import validate_calculation
+import pytest
+from io import StringIO
+from unittest.mock import patch
+import app  # Import the application file
 
-class TestCalculations(unittest.TestCase):
-    def test_is_valid_number(self):
-        self.assertTrue(is_valid_number(5))
-        self.assertTrue(is_valid_number(5.5))
-        self.assertFalse(is_valid_number("5"))
-        self.assertFalse(is_valid_number(None))
+# Test to verify that the functions are imported correctly
+@pytest.mark.it("Check if the functions are imported correctly from utils and validator")
+def test_imports():
+    try:
+        from utils import add_numbers, multiply_numbers  # Check if the functions are imported correctly
+        from validator import validate_numbers
+    except ImportError:
+        pytest.fail("It seems there is an error with the imports. Make sure the functions are properly imported from the corresponding files (utils.py and validator.py).")
 
-    def test_validate_numbers(self):
-        self.assertTrue(validate_numbers(5, 10))
-        self.assertTrue(validate_numbers(5.5, 10.5))
-        self.assertFalse(validate_numbers(5, "10"))
-        self.assertFalse(validate_numbers(None, 10))
+# Test to check if the main function is defined in app.py 
+@pytest.mark.it("Ensure that the 'main' function is defined in app.py")
+def test_main_function():
+    assert hasattr(app, 'main'), "The 'main' function is missing in app.py. Make sure it's correctly defined."
 
-    def test_add_numbers(self):
-        self.assertEqual(add_numbers(5, 10), 15)
-        self.assertEqual(add_numbers(5.5, 10.5), 16.0)
-        self.assertEqual(add_numbers(5, "10"), "Invalid input")
-        self.assertEqual(add_numbers(None, 10), "Invalid input")
 
-    def test_multiply_numbers(self):
-        self.assertEqual(multiply_numbers(5, 10), 50)
-        self.assertEqual(multiply_numbers(5.5, 10.5), 57.75)
-        self.assertEqual(multiply_numbers(5, "10"), "Invalid input")
-        self.assertEqual(multiply_numbers(None, 10), "Invalid input")
+# Test to verify calculations and validation work as expected
+@pytest.mark.it("Verify that the calculations and validation are working correctly")
+def test_calculations_and_validation():
+    with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+        # Simulate execution with valid numbers
+        app.main()  # Call the main function
 
-    def test_validate_calculation(self):
-        self.assertTrue(validate_calculation(add_numbers, 5, 10))
-        self.assertTrue(validate_calculation(multiply_numbers, 5.5, 10.5))
-        self.assertFalse(validate_calculation(add_numbers, 5, "10"))
-        self.assertFalse(validate_calculation(multiply_numbers, None, 10))
-
-if __name__ == '__main__':
-    unittest.main()
+        output = mock_stdout.getvalue()
+        assert "7" in output, "The addition is not working correctly. Make sure the sum is being performed correctly."
+        assert "12" in output, "The multiplication is not working correctly. Make sure the multiplication is being performed correctly."
+        assert "Invalid numbers" not in output, "You should not see the 'Invalid numbers' message if the numbers are valid."

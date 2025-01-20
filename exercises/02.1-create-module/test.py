@@ -1,24 +1,28 @@
-import unittest
+import pytest
+from unittest.mock import patch
 from io import StringIO
-import sys
-from greetings import say_hello, say_goodbye
 
-class TestGreetings(unittest.TestCase):
-    def test_greetings(self):
-        # Capture the output
-        captured_output = StringIO()
-        sys.stdout = captured_output
+@pytest.mark.it("Should import the say_hello and say_goodbye functions")
+def test_import_say_hello():
+    try:
+        from greetings import say_hello, say_goodbye
         
-        # Call the functions
-        print(say_hello("Alice"))
-        print(say_goodbye("Alice"))
-        
-        # Reset redirect.
-        sys.stdout = sys.__stdout__
-        
-        # Check the output
-        expected_output = "Hello, Alice!\nGoodbye, Alice!\n"
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        assert callable(say_hello), "say_hello is not callable"
+        assert callable(say_goodbye), "say_goodbye is not callable"
+    except ImportError:
+        pytest.fail("The module greetings.py could not be imported.")
 
-if __name__ == '__main__':
-    unittest.main()
+
+@pytest.mark.it("Should print the results of say_hello and say_goodbye in app.py")
+def test_app_prints_greetings():
+    with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+        import app  # Import the file that contains your main code
+        output = mock_stdout.getvalue().strip().split("\n")  # Capture each line of the standard output
+
+    # Define the expected values in the correct order
+    expected = [
+        "Hello, Alice!",
+        "Goodbye, Alice!"
+    ]
+
+    assert output == expected, f"Expected output to be '{expected}', but got '{output}'"

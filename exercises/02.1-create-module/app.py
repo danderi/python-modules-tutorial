@@ -1,8 +1,8 @@
-# import the functions from the module
+# import greetings module and use its functions
 
 
+#print the result of the functions
 
-# print the result of the functions
 
 
 

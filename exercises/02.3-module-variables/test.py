@@ -1,36 +1,45 @@
-import unittest
 from io import StringIO
-import sys
-from app import calculate_circle_area, calculate_fall_time
-from constants import PI, GRAVITY, AUTHOR
+from unittest.mock import patch
+import pytest
+import importlib
 
-class TestApp(unittest.TestCase):
-    def test_calculations(self):
-        # Capture the output
-        captured_output = StringIO()
-        sys.stdout = captured_output
-        
-        # Calculate the area of a circle with radius 5
-        area = calculate_circle_area(5)
-        print(f"Area of a circle with radius 5: {area:.2f}")
-        
-        # Calculate the fall time from 100 meters
-        time = calculate_fall_time(100)
-        print(f"Time to fall from 100 meters: {time:.2f} seconds")
-        
-        # Print the author
-        print(f"These calculations were made by: {AUTHOR}")
-        
-        # Reset redirect.
-        sys.stdout = sys.__stdout__
-        
-        # Check the output
-        expected_output = (
-            f"Area of a circle with radius 5: {PI * 5 * 5:.2f}\n"
-            f"Time to fall from 100 meters: {(2 * 100 / GRAVITY) ** 0.5:.2f} seconds\n"
-            f"These calculations were made by: {AUTHOR}\n"
-        )
-        self.assertEqual(captured_output.getvalue(), expected_output)
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.it("Should import the PI, GRAVITY, and AUTHOR constants")
+def test_import_constants():
+    from app import PI, GRAVITY, AUTHOR
+        
+    # Verify that the constants are defined
+    assert isinstance(PI, (int, float)), "PI is not a valid number"
+    assert isinstance(GRAVITY, (int, float)), "GRAVITY is not a valid number"
+    assert isinstance(AUTHOR, str), "AUTHOR is not a valid string"
+    
+
+@pytest.mark.it("Should verify that the functions calculate_circle_area and calculate_fall_time are declared")
+def test_functions_declared():
+    from app import calculate_circle_area, calculate_fall_time
+        
+    # Verify that both functions are callable (i.e., they are defined as functions)
+    assert callable(calculate_circle_area), "The function calculate_circle_area is not declared in app.py"
+    assert callable(calculate_fall_time), "The function calculate_fall_time is not declared in app.py"
+   
+   
+
+@pytest.mark.it("Should use calculate_circle_area and calculate_fall_time in app.py")
+def test_app_uses_functions():
+    with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
+        # Import the app module
+        import app
+
+        # Manually call the functions to ensure they are used
+        app.calculate_circle_area(5)
+        app.calculate_fall_time(100)
+
+        # Reload the module to execute the code in the main block
+        importlib.reload(app)  # This makes the main code execute again
+
+        # Capture the console output
+        output = mock_stdout.getvalue()
+
+        # Verify that the functions have been used
+        assert "Area of a circle with radius 5:" in output, "The function calculate_circle_area was not used in app.py"
+        assert "Time to fall from 100 meters:" in output, "The function calculate_fall_time was not used in app.py"

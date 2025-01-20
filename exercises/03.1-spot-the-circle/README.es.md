@@ -5,8 +5,8 @@
 ## 📝 Instrucciones
 
 1. Observa estos dos archivos:
-    - `app.py`: Tiene funciones matemáticas e importa `validar_numeros` de `validator.py`
-    - `validator.py`: Tiene funciones de validación e importa `multiplicar_numeros` de `app.py`
+    - `app.py`: Tiene funciones matemáticas e importa `validate_numbers` de `validator.py`
+    - `validator.py`: Tiene funciones de validación e importa `multiply_numbers` de `app.py`
 
 2. Intenta comprender por qué causan una importación circular:
 
@@ -21,6 +21,10 @@
 3. Ejecuta el código y observa el error que obtienes
 4. Toma notas sobre lo que te indica el mensaje de error
 
+## ✅ Salida esperada
+
+Al ejecutar `app.py`, deberías ver un mensaje de error sobre importaciones circulares. ¡No te preocupes, esto es exactamente lo que queremos! En el siguiente ejercicio, aprenderemos cómo solucionar esto. 🛠️
+
 ## 💡 Pista
 
 Cuando veas este error:
@@ -29,9 +33,6 @@ ImportError: cannot import name '...' from partially initialized module '...' (m
 ```
 Significa que tus módulos están tratando de importarse entre sí. ¡Piensa en ello como dos amigos que intentan llamarse por teléfono al mismo tiempo exacto! 📞
 
-## ✅ Salida esperada
-
-Al ejecutar `app.py`, deberías ver un mensaje de error sobre importaciones circulares. ¡No te preocupes, esto es exactamente lo que queremos! En el siguiente ejercicio, aprenderemos cómo solucionar esto. 🛠️
 
 ## 🤔 ¿Por qué sucede esto?
 

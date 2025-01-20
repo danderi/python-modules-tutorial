@@ -20,6 +20,10 @@ Oh no! We have two Python files that are trying to use each other's functions. L
 3. Run the code and see what error you get
 4. Take notes on what the error message tells you
 
+## ✅ Expected Output
+
+When you run `app.py`, you should see an error message about circular imports. Don't worry - this is exactly what we want! In the next exercise, we'll learn how to fix this. 🛠️
+
 ## 💡 Hint
 
 When you see this error:
@@ -28,9 +32,6 @@ ImportError: cannot import name '...' from partially initialized module '...' (m
 ```
 It means your modules are trying to import each other! Think about it like two friends trying to call each other on the phone at the exact same time - they're both busy calling, so neither can answer! 📞
 
-## ✅ Expected Output
-
-When you run `app.py`, you should see an error message about circular imports. Don't worry - this is exactly what we want! In the next exercise, we'll learn how to fix this. 🛠️
 
 ## 🤔 Why This Happens?
 

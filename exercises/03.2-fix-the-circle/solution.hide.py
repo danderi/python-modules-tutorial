@@ -1,28 +1,35 @@
 # utils.py
-def is_valid_number(value):
-    return isinstance(value, (int, float))
-
-def validate_numbers(a, b):
-    return is_valid_number(a) and is_valid_number(b)
-
-# calculator.py
-from utils import validate_numbers
-
 def add_numbers(a, b):
-    if validate_numbers(a, b):
-        return a + b
-    return "Invalid input"
+    """Sum two numbers"""
+    return a + b
 
 def multiply_numbers(a, b):
+    """Multiply two numbers"""
+    return a * b
+
+
+# app.py
+from utils import add_numbers, multiply_numbers
+from validator import validate_numbers
+
+def main():
+    # Performing calculations
+    a, b = 4, 3
     if validate_numbers(a, b):
-        return a * b
-    return "Invalid input"
+        print(add_numbers(a, b))  # Should print 7
+        print(multiply_numbers(a, b))  # Should print 12
+    else:
+        print("Invalid numbers")
+
+# Call the main function to run the program
+if __name__ == "__main__":
+    main()
+
 
 # validator.py
-from utils import validate_numbers
+def validate_numbers(a, b):
+    """Check if the numbers are valid"""
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        return False
+    return True
 
-def validate_calculation(func, a, b):
-    if validate_numbers(a, b):
-        result = func(a, b)
-        return isinstance(result, (int, float))
-    return False
