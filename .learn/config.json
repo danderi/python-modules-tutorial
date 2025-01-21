@@ -11,7 +11,7 @@
         "configPath": "learn.json",
         "outputPath": ".learn/dist",
         "publicPath": "/preview",
-        "publicUrl": "https://legendary-broccoli-465wrg99wcq77r-3000.app.github.dev",
+        "publicUrl": "https://organic-spoon-4wjrq4rrp7w37rq5-3000.app.github.dev",
         "contact": "https://github.com/learnpack/learnpack/issues/new",
         "language": "python3",
         "autoPlay": true,
@@ -67,7 +67,7 @@
         },
         "translations": []
     },
-    "address": "https://legendary-broccoli-465wrg99wcq77r.github.dev",
+    "address": "https://organic-spoon-4wjrq4rrp7w37rq5.github.dev",
     "currentExercise": "01.0-entry-point",
     "exercises": [
         {
@@ -117,11 +117,6 @@
                 {
                     "path": "exercises/01.0-entry-point/README.md",
                     "name": "README.md",
-                    "hidden": true
-                },
-                {
-                    "path": "exercises/01.0-entry-point/__pycache__",
-                    "name": "__pycache__",
                     "hidden": true
                 },
                 {
@@ -551,5 +546,5 @@
     "bugsLink": null,
     "videoSolutions": false,
     "localhostOnly": false,
-    "session": 3244688340343404500
+    "session": 5788038178702115000
 }
