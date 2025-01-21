@@ -5,13 +5,23 @@
 ## 📝 Instrucciones
 
 1. Importa el módulo `math`
-2. Calcula la raíz cuadrada de 16 usando `math.sqrt()`
-3. Calcula pi veces 2 usando `math.pi`
+2. Calcula la raíz cuadrada de 16 usando:
+
+```python
+math.sqrt()
+```
+
+3. Calcula pi veces 2 usando:
+
+```python
+math.pi
+``` 
 4. Imprime ambos resultados
 
 ## ✅ Salida esperada
 
 Tu programa debería imprimir algo como:
+
 ```python
 The square root of 16 is: 4.0
 Two times pi is: 6.6.283185307179586

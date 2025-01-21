@@ -4,14 +4,24 @@ Ahora que hemos creado nuestro módulo de saludos, ¡usemoslo en nuestro app.py!
 
 ## 📝 Instrucciones
 
-1. Importa las funciones de tu módulo de `greetings`
-2. Crea una lista de nombres: 
+1. Asegúrate de tener el archivo `greetings.py` creado. Este archivo debe contener las dos funciones:
+
+- `say_hello(name)` que devuelve "Hello, {name}!".
+- `say_goodbye(name)` que devuelve "Goodbye, {name}!".
+
+2. Importa las funciones `say_hello` y `say_goodbye` desde tu archivo `greetings.py`. Ejemplo
+
+```python
+#app.py
+from greetings import say_hello, say_goodbye
+```
+3. Crea una lista de nombres: 
 
 ```python
 names = ["Alice", "Bob", "Charlie"]
 ```
-3. Usa un bucle para saludar y despedirte de cada persona
-4. Imprime los resultados
+4. Usa un bucle para recorrer la lista de nombres para saludar y despedirte de cada persona.
+5. Imprime los resultados de cada saludo y despedida.
 
 
 ## ✅ Salida esperada

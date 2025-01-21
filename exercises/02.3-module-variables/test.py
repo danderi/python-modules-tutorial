@@ -2,16 +2,36 @@ from io import StringIO
 from unittest.mock import patch
 import pytest
 import importlib
+import os
+from unittest import mock
+
+
+@pytest.mark.it("Should check if the constants.py file exists")
+def test_constants_file_exists():
+    file_path = "./exercises/02.3-module-variables/constants.py"
+    assert os.path.isfile(file_path), "The file 'constants.py' was not found."
 
 
 @pytest.mark.it("Should import the PI, GRAVITY, and AUTHOR constants")
-def test_import_constants():
-    from app import PI, GRAVITY, AUTHOR
-        
-    # Verify that the constants are defined
-    assert isinstance(PI, (int, float)), "PI is not a valid number"
-    assert isinstance(GRAVITY, (int, float)), "GRAVITY is not a valid number"
-    assert isinstance(AUTHOR, str), "AUTHOR is not a valid string"
+def test_constants_import():
+    try:
+        import app  # Import the file that contains your main code
+        assert "PI" in dir(app), "The constant PI from the constants module is not imported"
+        assert "GRAVITY" in dir(app), "The constant GRAVITY from the constants module is not imported"
+        assert "AUTHOR" in dir(app), "The constant AUTHOR from the constants module is not imported"
+    except ImportError:
+        pytest.fail("The constant PI, GRAVITY, and AUTHOR from the constants module are not imported in app.py")
+
+
+@pytest.mark.it("Should verify that the constants PI, GRAVITY, and AUTHOR are declared in constants.py")
+def test_constants_declared():
+    try:
+        import constants  # Import the constants module
+        assert hasattr(constants, 'PI'), "The constant 'PI' is not defined in constants.py."
+        assert hasattr(constants, 'GRAVITY'), "The constant 'GRAVITY' is not defined in constants.py."
+        assert hasattr(constants, 'AUTHOR'), "The constant 'AUTHOR' is not defined in constants.py."
+    except ImportError:
+        pytest.fail("The constants.py file could not be imported. Check if it exists and is correctly written.")
     
 
 @pytest.mark.it("Should verify that the functions calculate_circle_area and calculate_fall_time are declared")
@@ -24,22 +44,15 @@ def test_functions_declared():
    
    
 
-@pytest.mark.it("Should use calculate_circle_area and calculate_fall_time in app.py")
+@pytest.mark.it("should print the corrrect message for the area of a circle, the time to fall from 100 meters, and the author") 
 def test_app_uses_functions():
-    with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
-        # Import the app module
+    with patch("sys.stdout", new_callable=StringIO) as stdout:
         import app
+        from constants import AUTHOR
+        importlib.reload(app)  
+        output = stdout.getvalue().strip().split("\n")
 
-        # Manually call the functions to ensure they are used
-        app.calculate_circle_area(5)
-        app.calculate_fall_time(100)
-
-        # Reload the module to execute the code in the main block
-        importlib.reload(app)  # This makes the main code execute again
-
-        # Capture the console output
-        output = mock_stdout.getvalue()
-
-        # Verify that the functions have been used
-        assert "Area of a circle with radius 5:" in output, "The function calculate_circle_area was not used in app.py"
-        assert "Time to fall from 100 meters:" in output, "The function calculate_fall_time was not used in app.py"
+   
+    assert output[0].lower() == "Area of a circle with radius 5: 78.53975".lower(), f"Unexpected output: {output[0]}"
+    assert output[1].lower() == "Time to fall from 100 meters: 4.515236409857309 seconds".lower(), f"Unexpected output: {output[1]}"
+    assert output[2].lower() == f"These calculations were made by: {AUTHOR}".lower(), f"Unexpected output: {output[2]}"

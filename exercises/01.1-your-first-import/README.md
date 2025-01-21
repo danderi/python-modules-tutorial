@@ -4,9 +4,9 @@ Let's start with something simple! We will import the `random` module and use it
 
 ## 📝 Instructions
 
-1. In app.py, import the native Python module `random`
+1. In `app.py`, import the native Python module `random`
 2. Use `random.randint(1, 10)` to generate a random number between 1 and 10 and store the returned result in a variable `random_number`
-3. Print the random number
+3. Print the variable `random_number`
 
 ## ✅ Expected Output
 

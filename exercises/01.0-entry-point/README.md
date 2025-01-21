@@ -39,21 +39,36 @@ In this exercise, we will work with two pre-created files. Let's get started! �
 
 1. Look at the file named `helper.py` which contains an auxiliary function called `greet(name)` that simply greets the user. It is a "tool" that we will use in the main program.
 
-2. Look at the file named `app.py` which will be the main file serving as the entry point to the program and imports the `greet` function from helper.py and organizes the main logic in the `main()` function.
+2. Look at the file named `app.py:` which will be the main file serving as the entry point to the program and imports the `greet` function from helper.py and organizes the main logic in the `main()` function.
 
-**Note:** The `if __name__ == "__main__"` block ensures that the program starts from here.
+**Note:** The block `if __name__ == "__main__"` ensures that the program starts from here.
 
-3. In the main file **app.py** complete the `main()` function in app.py to ask for the user's name and store it in a variable `name`.
+3. In the main file `app.py`, complete the `main()` function in app.py to ask for the user's name and store it in a variable `name`.
 
-4. To greet the user: Call the `greet(name)`  passing the variable name you just got from the previous step.
+4. To greet the user: Call the `greet(name)` function passing the `name` variable obtained in the previous step.
 
 5. Check the following in the `main()` function:
 
-- If the name is "Teacher", display a special message. Example: `Welcome Teacher, are you ready to guide your students?`
-- If the name has fewer than 3 characters, give a warning. Example: `Your name is quite short! Are you sure that's correct? 🤔`
-- If it is different from "Teacher" and has more than 3 characters, give a welcome message. Example: `Nice to meet you! Let's start learning Python! 🚀`
+- If the name is "Teacher", display a special message. Example: 
 
-6. Once you have completed the logic in `main()`, run the program.
+```python
+
+"Welcome, teacher ready to guide your students?"
+```
+
+- If the name has less than 3 characters, give a warning. Example: 
+
+```python
+"Your name is quite short! Are you sure that's correct?`"
+```
+
+- If it is different from "Teacher" and has more than 3 characters, welcome them. Example: 
+
+```python
+ "Nice to meet you! Let's start learning Python!"
+```
+
+6. Once you have completed the logic in the `main()` function, run the program.
 
 Finally, why has the organization we chose for our code been important?
 

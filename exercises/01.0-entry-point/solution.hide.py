@@ -7,7 +7,7 @@ def main():
 
     # Here you can add your own logic:
     if name.lower() == "teacher":
-        print("Welcome Teacher, are you ready to guide your students?")
+        print("Welcome teacher, are you ready to guide your students?")
     elif len(name) < 3:
         print("Your name is quite short! Are you sure that's correct?")
     else:

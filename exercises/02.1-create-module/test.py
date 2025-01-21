@@ -1,22 +1,28 @@
 import pytest
 from unittest.mock import patch
 from io import StringIO
+import os
+
+
+@pytest.mark.it("Should check if the greetings.py file exists")
+def test_greetings_file_exists():
+    file_path = "./exercises/02.1-create-module/greetings.py"
+    assert os.path.isfile(file_path), "The file 'greetings.py' was not found."
 
 @pytest.mark.it("Should import the say_hello and say_goodbye functions")
-def test_import_say_hello():
+def test_greetings_import():
     try:
-        from greetings import say_hello, say_goodbye
-        
-        assert callable(say_hello), "say_hello is not callable"
-        assert callable(say_goodbye), "say_goodbye is not callable"
+        import app  # Import the file that contains your main code
+        assert "say_hello" in dir(app), "The function say_hello from the greetings module is not imported"
+        assert "say_goodbye" in dir(app), "The function say_hello from the greetings module is not imported"
     except ImportError:
-        pytest.fail("The module greetings.py could not be imported.")
+        pytest.fail("The function choice from the random module is not imported in app.py")
 
 
 @pytest.mark.it("Should print the results of say_hello and say_goodbye in app.py")
-def test_app_prints_greetings():
+def test_app_prints_greetings(app):
     with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
-        import app  # Import the file that contains your main code
+        app()
         output = mock_stdout.getvalue().strip().split("\n")  # Capture each line of the standard output
 
     # Define the expected values in the correct order

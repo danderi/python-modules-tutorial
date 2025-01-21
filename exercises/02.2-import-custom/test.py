@@ -24,13 +24,11 @@ def test_names_array_declaration():
     expected_names = ["Alice", "Bob", "Charlie"]
     assert app.names == expected_names, f"'names' array does not match the expected: {expected_names}. Actual: {app.names}"
 
+
 @pytest.mark.it("Should print the results of say_hello and say_goodbye in app.py") 
-def test_app_prints_greetings():
+def test_app_prints_greetings(app):
     with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
-        import app
-        import importlib
-        importlib.reload(app)  # Reimport the module to ensure the code runs
-        
+        app()
         # Capture what was printed
         output = mock_stdout.getvalue().strip().split("\n")  # Capture each line of the standard output
 
