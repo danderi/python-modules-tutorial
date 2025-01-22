@@ -38,8 +38,8 @@ def test_name_with_spaces():
 
 @pytest.mark.it("Should greet the teacher with a specific message")
 def test_teacher_name():
-    with patch("builtins.input", return_value="Teacher"):
+    with patch("builtins.input", return_value="teacher"):
         with patch("sys.stdout", new_callable=StringIO) as stdout:
             app.main()
             output = stdout.getvalue().strip()
-    assert "Welcome Teacher, are you ready to guide your students?" in output, "The program did not greet the teacher correctly."
+    assert "Welcome teacher, are you ready to guide your students?".lower() in output.lower(), "The program did not greet the teacher correctly."

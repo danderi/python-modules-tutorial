@@ -21,16 +21,14 @@
 			"extensions": ["learn-pack.learnpack-vscode"]
 		}
 	},
-	"onCreateCommand": "sudo apt-get update -y && sudo apt-get install xdg-utils -y && pip3 install pytest==6.2.5 pytest-testdox mock && npm i @learnpack/learnpack@5.0.11 -g && learnpack plugins:install @learnpack/python@1.0.3"
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
+	"onCreateCommand": "sudo apt-get update -y && sudo apt-get install xdg-utils -y && pip3 install pytest==6.2.5 pytest-testdox mock && npm i @learnpack/learnpack@5.0.7 -g && learnpack plugins:install @learnpack/python@1.0.3",
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	// "postCreateCommand": "learnpack start"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

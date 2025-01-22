@@ -18,7 +18,7 @@ Ahora que hemos visto el error de importación circular, ¡vamos a solucionarlo!
 `utils.py` se deberia ver asi:
 
 ```python
-# This is our utility module
+# utils.py
 
 def add_numbers(a, b):
     """Add two numbers"""
@@ -29,7 +29,7 @@ def multiply_numbers(a, b):
     return a * b
 ```
 
-- Ahora, en `validator.py`, vamos a mantener solo la lógica de validación. No necesitamos las funciones de cálculo aquí. Ejemplo:
+- Ahora, en `validator.py`, vamos a mantener solo la lógica de validación. No necesitamos las funciones de cálculo aquí. Copia este código en `validator.py`:
 
 ```python
 
@@ -41,12 +41,12 @@ def validate_numbers(a, b):
     return True
 ```
 
-4. **Refactoriza el archivo app.py.** Importa las funciones de cálculo desde `utils.py` y la función de validación desde `validator.py`.
+4. **Refactoriza el archivo app.py.** Importa las funciones de cálculo (`add_numbers, multiply_numbers`) desde `utils.py` y la función de validación `validate_numbers` desde `validator.py`.
 
 5. Define una función llamada `main` para hacer el código más organizado. Esta función debería ser el punto de entrada del programa y debe realizar lo siguiente:
 
-- Validar los números usando validate_numbers.
-- Si son válidos, realizar la suma y multiplicación.
+- Validar los números usando `validate_numbers`.
+- Si son válidos, realizar la suma y multiplicación con las funciones `add_numbers`, `multiply_numbers`.
 - Si no son válidos, mostrar un mensaje indicando que los números son inválidos. Ejemplo:
 
 ```python

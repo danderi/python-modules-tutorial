@@ -4,19 +4,28 @@
 
 ## 📝 Instrucciones
 
-1. Crea un archivo llamado `greetings.py`
+1. Crea un archivo llamado `greetings.py`. Este archivo debe estar en la misma carpeta que el archivo `app.py` de este ejercicio.
 
-2. En el archivo llamado `greetings.py` escribe una función llamada `say_hello(name)` que devuelva:
-
-```python
-"Hello, [name]!"
-```
-3. En el mismo archivo `greetings.py` define otra función llamada `say_goodbye(name)` que devuelva: 
+2. En el archivo llamado `greetings.py` declara una función llamada `say_hello(name)`. Esta función tomará un nombre como entrada y devolverá un saludo personalizado con ese nombre. Ejemplo:
 
 ```python
-"Goodbye, [name]!"
+def say_hello(name):
+    return f"Hello, {name}!"
+
 ```
-4. Importa y usa estas funciones en el archivo `app.py`,  haciendo un print() de lo que retorna cada una.
+3. En el mismo archivo `greetings.py` define otra función llamada `say_goodbye(name)` que devuelva el siguiente mensaje: 
+
+```python
+return f"Goodbye, {name}!"
+```
+
+Similar a como lo hicimos en el paso anterior.
+
+4. Ahora, en el archivo `app.py`, vamos a importar las funciones que acabamos de crear en `greetings.py` y las vamos a usar.,  haciendo un `print()` de lo que retorna cada una. Ejemplo:
+
+```python
+print(say_hello("Alice"))
+```
 
 
 ## ✅ Salida esperada

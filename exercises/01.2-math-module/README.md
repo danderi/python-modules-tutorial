@@ -5,13 +5,23 @@ Time to do some math! Python's `math` module has many useful mathematical functi
 ## 📝 Instructions
 
 1. Import the `math` module
-2. Calculate the square root of 16 using `math.sqrt()`
-3. Calculate pi times 2 using `math.pi`
+2. Calculate the square root of 16 using:
+
+```python
+math.sqrt()
+```
+
+3. Calculate pi times 2 using:
+
+```python
+math.pi
+``` 
 4. Print both results
 
 ## ✅ Expected Output
 
 Your program should print something like:
+
 ```python
 The square root of 16 is: 4.0
 Two times pi is: 6.283185307179586

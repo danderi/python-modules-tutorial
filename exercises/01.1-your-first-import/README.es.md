@@ -4,10 +4,10 @@
 
 ## 📝 Instrucciones
 
-1. En app.py, importa el módulo nativo de python `random`
+1. En `app.py`, importa el módulo nativo de python `random`
 2. Usa `random.randint(1, 10)` para generar un número aleatorio entre 1 y 10 y guarda el resultado retornado en una variable
 `random_number`
-3. Imprime el número aleatorio
+3. Imprime la variable `ramdom_number`
 
 ## ✅ Salida esperada
 

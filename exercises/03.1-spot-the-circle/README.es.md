@@ -23,22 +23,32 @@
 
 ## ✅ Salida esperada
 
-Al ejecutar `app.py`, deberías ver un mensaje de error sobre importaciones circulares. ¡No te preocupes, esto es exactamente lo que queremos! En el siguiente ejercicio, aprenderemos cómo solucionar esto. 🛠️
+Al ejecutar `app.py`, deberías ver un mensaje de error sobre importaciones circulares. Como este:
 
-## 💡 Pista
-
-Cuando veas este error:
 ```
 ImportError: cannot import name '...' from partially initialized module '...' (most likely due to a circular import)
 ```
-Significa que tus módulos están tratando de importarse entre sí. ¡Piensa en ello como dos amigos que intentan llamarse por teléfono al mismo tiempo exacto! 📞
+
+¡No te preocupes, esto es exactamente lo que queremos! Esto significa que tus módulos están tratando de importarse entre sí. ¡Piensa en ello como dos amigos que intentan llamarse por teléfono al mismo tiempo exacto! 
 
 
-## 🤔 ¿Por qué sucede esto?
+## Quizz
+
+- ¿Por qué ocurre el error de importación circular en este caso?
+
+   - [ ] Porque Python no permite importar funciones desde diferentes archivos.
+   - [x] Porque ambos archivos intentan importar funciones entre sí, causando un bucle infinito.
+   - [ ] Porque validator.py no está definido antes de ser llamado.
+   - [ ] Porque las funciones no están en el orden correcto.
+
+
+
+##  ¿Por qué sucede esto?
 
 1. Cuando Python comienza con `app.py`, ve que necesita `validar_numeros` de `validator.py`.
-2. Entonces va a `validator.py`, pero luego ve que necesita `multiplicar_numeros` de `app.py`.
-3. ¡Pero `app.py` aún no ha terminado de cargarse!
+2. Entonces va a `validator.py`, pero luego ve que necesita `multiplicar_numeros` de `app.py`, pero `app.py` aún no ha terminado de cargarse.
 4. Python se confunde y genera un error.
+
+
 
 En el próximo ejercicio, aprenderemos cómo solucionar esto reorganizando nuestro código. 🚀
