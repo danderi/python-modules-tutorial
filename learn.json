@@ -1,33 +1,27 @@
 {
     "slug": "python-modules-tutorial",
     "title": {
-        "en": "Learn Python Modules",
-        "es": "Aprender Módulos de Python"
+        "en": "Comprehensive to organize your code using Python modules",
+        "es": "Guía Completa de cómo organizar tu código usando módulos de python"
     },
-    "repository": "https://github.com/learnpack/python-modules",
-    "preview": "https://github.com/learnpack/python-modules/blob/master/preview.gif?raw=true",
+    "repository": "https://github.com/learnpack/python-modules-tutorial",
+    "preview": "https://github.com/learnpack/python-modules-tutorial/blob/master/assets/preview.jpg?raw=true",
     "description": {
-        "en": "Learn how to use and create Python modules, from basic imports to advanced concepts",
-        "es": "Aprende a usar y crear módulos de Python, desde importaciones básicas hasta conceptos avanzados"
+        "en": "Learn how to use and create Python modules, from basic imports to advanced concepts. Students will learn how to organize their code efficiently and will be capable of creating reusable modules.",
+        "es": "Aprende a usar y crear módulos de Python, desde importaciones básicas hasta conceptos avanzados. Los estudiantes aprenderán a organizar su código de manera eficiente y serán capaces de crear módulos reutilizables."
     },
     "language": "python3",
     "difficulty": "beginner",
     "duration": 6,
     "videoSolutions": false,
     "projectType": "tutorial",
-    "bugsLink": "https://github.com/learnpack/python-modules/issues/new",
+    "bugsLink": "https://github.com/learnpack/python-modules-tutorial/issues/new",
     "graded": true,
-    "technologies": ["python", "modules"],
+    "technologies": ["python", "modules", "code-organization", "software-engineering", "best-practices"],
     "telemetry": {
-        "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry"
+        "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry?asset_id=2180"
     },
     "editor": {
         "version": "5.0"
-    },
-    "video": {
-        "intro": {
-            "es": "https://www.youtube.com/watch?v=IXNSwnN-YqM",
-            "en": "https://www.youtube.com/watch?v=amyDNhZwGJQ"
-        }
     }
 }
