@@ -1,0 +1,38 @@
+{
+  "01-intro-to-modules": {
+    "us": "01-intro-to-modules"
+  },
+  "01.0-entry-point": {
+    "us": "01.0-entry-point"
+  },
+  "01.1-your-first-import": {
+    "us": "01.1-your-first-import"
+  },
+  "01.2-math-module": {
+    "us": "01.2-math-module"
+  },
+  "01.3-import-specific": {
+    "us": "01.3-import-specific"
+  },
+  "02-custom-modules": {
+    "us": "02-custom-modules"
+  },
+  "02.1-create-module": {
+    "us": "02.1-create-module"
+  },
+  "02.2-import-custom": {
+    "us": "02.2-import-custom"
+  },
+  "02.3-module-variables": {
+    "us": "02.3-module-variables"
+  },
+  "03-circular-imports": {
+    "us": "03-circular-imports"
+  },
+  "03.1-spot-the-circle": {
+    "us": "03.1-spot-the-circle"
+  },
+  "03.2-fix-the-circle": {
+    "us": "03.2-fix-the-circle"
+  }
+}
