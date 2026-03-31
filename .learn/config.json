@@ -156,6 +156,11 @@
             "graded": true,
             "files": [
                 {
+                    "path": "exercises/01.1-your-first-import/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
+                {
                     "path": "exercises/01.1-your-first-import/app.py",
                     "name": "app.py",
                     "hidden": false
@@ -192,10 +197,15 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.2-math-module/app.py",
             "title": "01.2-math-module",
             "graded": true,
             "files": [
+                {
+                    "path": "exercises/01.2-math-module/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/01.2-math-module/app.py",
                     "name": "app.py",
@@ -233,10 +243,15 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/01.3-import-specific/app.py",
             "title": "01.3-import-specific",
             "graded": true,
             "files": [
+                {
+                    "path": "exercises/01.3-import-specific/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/01.3-import-specific/app.py",
                     "name": "app.py",
@@ -300,10 +315,15 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/02.1-create-module/app.py",
             "title": "02.1-create-module",
             "graded": true,
             "files": [
+                {
+                    "path": "exercises/02.1-create-module/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/02.1-create-module/app.py",
                     "name": "app.py",
@@ -346,10 +366,15 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/02.2-import-custom/app.py",
             "title": "02.2-import-custom",
             "graded": true,
             "files": [
+                {
+                    "path": "exercises/02.2-import-custom/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/02.2-import-custom/app.py",
                     "name": "app.py",
@@ -392,13 +417,23 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/02.3-module-variables/app.py",
             "title": "02.3-module-variables",
             "graded": true,
             "files": [
                 {
+                    "path": "exercises/02.3-module-variables/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
+                {
                     "path": "exercises/02.3-module-variables/app.py",
                     "name": "app.py",
+                    "hidden": false
+                },
+                {
+                    "path": "exercises/02.3-module-variables/constants.py",
+                    "name": "constants.py",
                     "hidden": false
                 },
                 {
@@ -459,10 +494,15 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "app.py",
+            "entry": "exercises/03.1-spot-the-circle/app.py",
             "title": "03.1-spot-the-circle",
             "graded": false,
             "files": [
+                {
+                    "path": "exercises/03.1-spot-the-circle/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/03.1-spot-the-circle/app.py",
                     "name": "app.py",
@@ -540,11 +580,11 @@
                     "hidden": false
                 }
             ],
-            "done": false
+            "done": true
         }
     ],
     "bugsLink": null,
     "videoSolutions": false,
     "localhostOnly": false,
-    "session": 660523270344255400
+    "session": 3387920383107136000
 }

@@ -1,16 +1,16 @@
-# import the constants module
-from constants import PI, GRAVITY, AUTHOR
-# Define the function to calculate the area of a circle
-def calculate_circle_area(radius):
-    return PI * radius ** 2
-
-# Define the function to calculate the fall time
-def calculate_fall_time(height):
-    return (2 * height / GRAVITY) ** 0.5
+# This is our calculator module - renamed to app.py
+from validator import validate_numbers  # This import creates a circle!
+from utils import add_numbers, multiply_numbers
 
 
-area = calculate_circle_area(5)
-print(f"Area of a circle with radius 5: {area}")
-time = calculate_fall_time(100)
-print(f'Time to fall from 100 meters: {time} seconds')
-print(f"These calculations were made by: {AUTHOR}")
+def main():
+    a, b = 4, 3
+    if validate_numbers(a, b):
+        print(add_numbers(a, b))
+        print(multiply_numbers(a, b))
+    else:
+        print("invalid numbers")
+
+
+
+main()
