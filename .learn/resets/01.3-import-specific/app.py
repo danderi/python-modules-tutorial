@@ -1,9 +1,7 @@
 # Importing specific items from modules
-from random import choice
+
 
 # list of fruits
 fruits = ["apple", "banana", "cherry", "date"]
 
 # Use the choice() function to select a random fruit
-selected_fruit = choice(fruits)
-print(selected_fruit)

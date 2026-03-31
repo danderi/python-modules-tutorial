@@ -2,10 +2,10 @@
 
 def add_numbers(a, b):
     """Add two numbers if they are valid"""
-    return a + b
+    pass
 
 def multiply_numbers(a, b):
     """Multiply two numbers if they are valid"""
-    return a * b
+    pass
 
 

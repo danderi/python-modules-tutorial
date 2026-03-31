@@ -63,7 +63,7 @@
         "translations": []
     },
     "address": "https://super-potato-6xwpv7v64px3rx6r.github.dev",
-    "currentExercise": "01.1-your-first-import",
+    "currentExercise": "03.2-fix-the-circle",
     "exercises": [
         {
             "position": 0,
@@ -104,6 +104,11 @@
             "title": "01.0-entry-point",
             "graded": true,
             "files": [
+                {
+                    "path": "exercises/01.0-entry-point/__pycache__",
+                    "name": "__pycache__",
+                    "hidden": true
+                },
                 {
                     "path": "exercises/01.0-entry-point/app.py",
                     "name": "app.py",
@@ -187,7 +192,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/01.2-math-module/app.py",
+            "entry": "app.py",
             "title": "01.2-math-module",
             "graded": true,
             "files": [
@@ -217,7 +222,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 4,
@@ -228,7 +233,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/01.3-import-specific/app.py",
+            "entry": "app.py",
             "title": "01.3-import-specific",
             "graded": true,
             "files": [
@@ -258,7 +263,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 5,
@@ -295,7 +300,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/02.1-create-module/app.py",
+            "entry": "app.py",
             "title": "02.1-create-module",
             "graded": true,
             "files": [
@@ -330,7 +335,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 7,
@@ -341,7 +346,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/02.2-import-custom/app.py",
+            "entry": "app.py",
             "title": "02.2-import-custom",
             "graded": true,
             "files": [
@@ -376,7 +381,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 8,
@@ -387,7 +392,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/02.3-module-variables/app.py",
+            "entry": "app.py",
             "title": "02.3-module-variables",
             "graded": true,
             "files": [
@@ -417,7 +422,7 @@
                     "hidden": true
                 }
             ],
-            "done": false
+            "done": true
         },
         {
             "position": 9,
@@ -454,7 +459,7 @@
                 "us": "README.md"
             },
             "language": "python3",
-            "entry": "exercises/03.1-spot-the-circle/app.py",
+            "entry": "app.py",
             "title": "03.1-spot-the-circle",
             "graded": false,
             "files": [
@@ -541,5 +546,5 @@
     "bugsLink": null,
     "videoSolutions": false,
     "localhostOnly": false,
-    "session": 8183572100335066000
+    "session": 660523270344255400
 }

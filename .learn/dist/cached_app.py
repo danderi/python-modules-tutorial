@@ -1,18 +1,16 @@
-# This is our entry point file! This file is where our program starts running
-from helper import greet # First, we import what we need from our helper module
+# import the constants module
+from constants import PI, GRAVITY, AUTHOR
+# Define the function to calculate the area of a circle
+def calculate_circle_area(radius):
+    return PI * radius ** 2
+
+# Define the function to calculate the fall time
+def calculate_fall_time(height):
+    return (2 * height / GRAVITY) ** 0.5
 
 
-def main():
-   # add your code here
-   name = input("What is your name:")
-   if name.lower() == "teacher":
-      print("Welcome teacher, are you ready to guide your students?")
-   elif len(name) < 3:
-      print("Your name is quite short! Are you sure that's correct?`")
-   else:
-      print("Nice to meet you! Let's start learning Python!")
-   greet(name)
-
-# This special if statement makes sure our code only runs when we execute this file directly
-if __name__ == "__main__":
-    main()
+area = calculate_circle_area(5)
+print(f"Area of a circle with radius 5: {area}")
+time = calculate_fall_time(100)
+print(f'Time to fall from 100 meters: {time} seconds')
+print(f"These calculations were made by: {AUTHOR}")
